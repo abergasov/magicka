@@ -5,6 +5,12 @@ import store from './store'
 import router from "@/router";
 import axios from './axios'
 
+declare global {
+    interface Window {
+        ethereum: any;
+    }
+}
+
 createApp(App)
     .use(router)
     .use(store)

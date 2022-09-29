@@ -45,6 +45,7 @@ func InitAppRouter(appPort string, logger logger.AppLogger) *AppRouter {
 
 func (a *AppRouter) initRoutes() {
 	a.fiberApp.Get("/ping", a.pong)
+	a.fiberApp.Get("/contracts", a.getBalanceContracts)
 }
 
 func (a *AppRouter) pong(ctx *fiber.Ctx) error {
